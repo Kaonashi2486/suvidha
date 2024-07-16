@@ -42,7 +42,7 @@
 
 .button:hover {
   background-color: #E0B213;
-  color:black
+  color: black;
 }
 
 @keyframes bounce {
