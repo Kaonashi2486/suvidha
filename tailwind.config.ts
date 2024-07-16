@@ -3,6 +3,13 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 const colors = require("tailwindcss/colors");
 const { default: flattenColorPalette } = require("tailwindcss/lib/util/flattenColorPalette");
 
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+};
+
 const addVariablesForColors = ({ addBase, theme }: any) => {
   let allColors = flattenColorPalette(theme("colors"));
   let newVars = Object.fromEntries(
