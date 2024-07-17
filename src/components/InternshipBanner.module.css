@@ -1,7 +1,7 @@
 /* components/InternshipBanner.module.css */
 
 .banner {
-  background-image: url('../images_pndformat/intern.png'); /* Add the path to your image */
+  background-image: url('../../../public/intern.png'); /* Add the path to your image */
   background-size: cover;
   background-position: center;
   padding: 50px 20px;

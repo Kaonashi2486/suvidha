@@ -1,16 +1,8 @@
-import type { Config } from "tailwindcss";
 const defaultTheme = require("tailwindcss/defaultTheme");
 const colors = require("tailwindcss/colors");
 const { default: flattenColorPalette } = require("tailwindcss/lib/util/flattenColorPalette");
 
-module.exports = {
-  plugins: {
-    tailwindcss: {},
-    autoprefixer: {},
-  },
-};
-
-const addVariablesForColors = ({ addBase, theme }: any) => {
+const addVariablesForColors = ({ addBase, theme }: { addBase: any, theme: any }) => {
   let allColors = flattenColorPalette(theme("colors"));
   let newVars = Object.fromEntries(
     Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
@@ -21,7 +13,7 @@ const addVariablesForColors = ({ addBase, theme }: any) => {
   });
 };
 
-const config: Config = {
+module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -65,10 +57,8 @@ const config: Config = {
     },
   },
   plugins: [
-    addVariablesForColors
+    addVariablesForColors,
+    require("tailwindcss"),
+    require("autoprefixer"),
   ],
 };
-
-export default config;
-
-
